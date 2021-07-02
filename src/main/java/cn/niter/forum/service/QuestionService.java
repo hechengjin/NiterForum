@@ -553,6 +553,7 @@ public class QuestionService {
         } else {
             // 更新
          question.setGmtModified(System.currentTimeMillis());
+            question.setCreator(question.getCreator());
             QuestionExample example = new QuestionExample();
             example.createCriteria()
                     .andIdEqualTo(question.getId());

@@ -1,5 +1,5 @@
 package cn.niter.forum.config;
-
+/*
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
@@ -38,7 +38,7 @@ public class HttpsConfig {
      * 访问80端口跳转433
 
      * */
-
+/*
     @Bean
     public Connector connector(){
         Connector connector=new Connector("org.apache.coyote.http11.Http11NioProtocol");
@@ -70,4 +70,4 @@ public class HttpsConfig {
 
 
 }
-
+*/

@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import javax.servlet.http.HttpServletRequest;
 @Controller
 public class HelloController {
-    @Autowired
-    private AliProvider aliProvider;
+    //@Autowired
+    //private AliProvider aliProvider;
 
     @Autowired
     private TinifyProvider tinifyProvider;
 
-    @Autowired
-    private QCloudProvider qCloudProvider;
+    //@Autowired
+    //private QCloudProvider qCloudProvider;
 
-    @Autowired
-    private QqProvider qqProvider;
+    //@Autowired
+    //private QqProvider qqProvider;
 
-    @Autowired
-    private BaiduCloudProvider baiduCloudProvider;
+    //@Autowired
+    //private BaiduCloudProvider baiduCloudProvider;
 
     @Value("${qcloud.keywords.enable}")
     private int keywordsEnable;

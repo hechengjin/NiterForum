@@ -15,7 +15,7 @@
 2. Thymeleaf模板引擎。
 3. 数据访问层：Mybatis，mybatis generator。
 4. 数据库：MySql。
-5. 服务器：内置Tomcat。
+5. 服务器：内置Tomcat。 http://localhost:8080/forum
 6. 前端相关:Jquery,Bootstrap，Ajax，Layer等。
 7. 前端模板：LayUI_fly社区模板。
 8. 文件上传：腾讯云COS对象存储。

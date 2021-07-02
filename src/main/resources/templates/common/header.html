@@ -8,8 +8,8 @@
   <meta th:if="${news!=null}" name="keywords" th:content="${news.tag+',资讯,新闻,'+news.columnStr}">
   <meta th:if="${question==null&&news==null}" name="keywords" th:content="${@environment.getProperty('site.meta.keywords')}">
   <meta name="description" th:content="${textDescription==null?@environment.getProperty('site.meta.description'):textDescription}">
-  <meta name="Copyright" th:content="${'本页版权归'+@environment.getProperty('site.main.title')+'所有'}">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="Copyright" th:content="${'本页版权归'+@environment.getProperty('site.main.title')+'所有'}" >
+  <!-- meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"-->
   <link rel="stylesheet" href="/layui/css/layui.css">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/mylay.css?v=1.36">
@@ -41,13 +41,13 @@
         <a></a>
         <dl class="layui-nav-child">
           <dd><a href="/news"><i class="layui-icon">&#xe705;</i>看看</a></dd>
-          <dd><a href="/talk"><i class="iconfont icon-jiaoliu"></i>说说</a></dd>
+          <!--dd><a href="/talk"><i class="iconfont icon-jiaoliu"></i>说说</a></dd-->
           <dd><a th:href="${@environment.getProperty('site.info.contactQunUrl')}" target="_blank"><i class="layui-icon">&#xe770;</i>官方群</a></dd>
           <!--dd><a href="/dev"><i class="iconfont icon-iconmingxinganli"></i>实验室</a></dd-->
-          <dd><a target="_blank" href="https://gitee.com/yourkevin/NiterForum/"><i><img src="/images/gitee120c.png" style="height: 16px"></i>Gitee</a></dd>
-          <dd><a target="_blank" href="https://github.com/yourkevin/NiterForum/"><i><img src="/images/github120c.png" style="height: 16px"></i>Github</a></dd>
-          <dd><a target="_blank" href="/doc.html"><i class="layui-icon" style="font-size: 16px; color: #42a0ff;">&#xe655;</i>API文档</a></dd>
-          <dd><a target="_blank" href="https://api-1251590924.cos.ap-nanjing.myqcloud.com/qrcode/index.html"><i class="layui-icon" style="font-size: 16px; color: #ffdd11;">&#xe65e;</i>打赏</a></dd>
+          <!--dd><a target="_blank" href="https://gitee.com/yourkevin/NiterForum/"><i><img src="/images/gitee120c.png" style="height: 16px"></i>Gitee</a></dd-->
+          <!--dd><a target="_blank" href="https://github.com/yourkevin/NiterForum/"><i><img src="/images/github120c.png" style="height: 16px"></i>Github</a></dd-->
+          <!--dd><a target="_blank" href="/doc.html"><i class="layui-icon" style="font-size: 16px; color: #42a0ff;">&#xe655;</i>API文档</a></dd-->
+          <!--dd><a target="_blank" href="https://api-1251590924.cos.ap-nanjing.myqcloud.com/qrcode/index.html"><i class="layui-icon" style="font-size: 16px; color: #ffdd11;">&#xe65e;</i>打赏</a></dd-->
         </dl>
       </li>
     </ul>
@@ -59,8 +59,14 @@
       <!--li th:class="${'devnav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">
         <a href="/dev"><i class="iconfont icon-iconmingxinganli"></i>实验室</a>
       </li-->
-      <li th:class="${'talknav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">
+      <!--li th:class="${'talknav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">
         <a href="/talk"><i class="layui-icon">&#xe63a;</i>说说</a>
+      </li-->
+      <li th:class="${'talknav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">
+        <a href="/forum?column=2"><i class="layui-icon">&#xe63a;</i>产品</a>
+      </li>
+      <li th:class="${'talknav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">
+        <a href="/forum?column=5"><i class="layui-icon">&#xe63a;</i>公告</a>
       </li>
       <li th:class="${'newsnav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">
         <a href="/news"><i class="layui-icon">&#xe705;</i>看看</a>
@@ -68,7 +74,7 @@
       <!--li th:class="${'chatnav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">
         <a href="/chat"><i class="iconfont icon-jiaoliu"></i>留言</a>
       </li-->
-      <li class="layui-nav-item">
+      <!--li class="layui-nav-item">
         <a href="https://github.com/yourkevin/NiterForum/" target="_blank"><i class="layui-icon">&#xe635;</i>源码</a>
         <dl class="layui-nav-child">
           <dd><a target="_blank" href="https://gitee.com/yourkevin/NiterForum/"><i><img src="/images/gitee120c.png" style="height: 28px"></i>Gitee</a></dd>
@@ -76,7 +82,7 @@
           <dd><a target="_blank" href="/doc.html"><i class="layui-icon" style="font-size: 30px; color: #42a0ff;">&#xe655;</i>API文档</a></dd>
           <dd><a target="_blank" href="https://api-1251590924.cos.ap-nanjing.myqcloud.com/qrcode/index.html"><i class="layui-icon" style="font-size: 30px; color: #ffdd11;">&#xe65e;</i>打赏</a></dd>
         </dl>
-      </li>
+      </li-->
       <!--li class="layui-nav-item">
         <a th:href="${@environment.getProperty('site.info.contactQunUrl')}" target="_blank"><i class="layui-icon">&#xe770;</i>联系</a>
       </li-->
@@ -184,8 +190,8 @@
   <div class="layui-container">
     <ul class="layui-clear">
       <li th:class="${column == null}? 'layui-this' : ''"><a href="/forum">首页</a></li>
-      <li th:class="${column == 1}? 'layui-this' : ''"><a href="/forum?column=1">提问</a></li>
-      <li th:class="${column == 2}? 'layui-this' : ''"><a href="/forum?column=2">分享<span class="layui-badge-dot"></span></a></li>
+      <li th:class="${column == 1}? 'layui-this' : ''"><a href="/forum?column=1">原创</a></li>
+      <li th:class="${column == 2}? 'layui-this' : ''"><a href="/forum?column=2">产品<span class="layui-badge-dot"></span></a></li>
       <li th:class="${column == 3}? 'layui-this' : ''"><a href="/forum?column=3">建议</a></li>
       <li th:class="${column == 4}? 'layui-this' : ''"><a href="/forum?column=4">讨论</a></li>
       <li th:class="${column == 5}? 'layui-this' : ''"><a href="/forum?column=5">公告</a></li>

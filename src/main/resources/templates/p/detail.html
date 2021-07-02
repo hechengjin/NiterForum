@@ -24,8 +24,8 @@
         <h1 th:text="${question.title}"></h1>
         <div class="fly-detail-info">
           <!-- <span class="layui-badge">审核中</span> -->
-          <a class="layui-badge layui-bg-green" th:if="${question.column2==1}">提问</a>
-          <a class="layui-badge layui-bg-green" th:if="${question.column2==2}">分享</a>
+          <a class="layui-badge layui-bg-green" th:if="${question.column2==1}">原创</a>
+          <a class="layui-badge layui-bg-green" th:if="${question.column2==2}">产品</a>
           <a class="layui-badge layui-bg-green" th:if="${question.column2==3}">建议</a>
           <a class="layui-badge layui-bg-green" th:if="${question.column2==4}">讨论</a>
           <a class="layui-badge layui-bg-green" th:if="${question.column2==5}">公告</a>
@@ -198,8 +198,8 @@
           <div class="layui-input-block" style="margin-left: 80px">
             <select lay-verify="required" id="column2" name="column2"  >
               <option></option>
-              <option value="1" th:selected="${question.column2==1}">提问</option>
-              <option value="2" th:selected="${question.column2==2}" >分享</option>
+              <option value="1" th:selected="${question.column2==1}">原创</option>
+              <option value="2" th:selected="${question.column2==2}" >产品</option>
               <option value="3" th:selected="${question.column2==3}">建议</option>
               <option value="4" th:selected="${question.column2==4}">讨论</option>
               <option th:if="${question.canSticky}" th:selected="${question.column2==5}" value="5">公告</option>
@@ -286,7 +286,7 @@
     }
   }
 </script>
-<script src="https://v.vaptcha.com/v3.js"></script>
+<script src="https://v-cn.vaptcha.com/v3.js"></script>
   <script type="text/javascript">
     token = '';
     userIp=returnCitySN["cip"];

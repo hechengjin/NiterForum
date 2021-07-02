@@ -4,6 +4,7 @@ import cn.niter.forum.annotation.UserLoginToken;
 import cn.niter.forum.dto.FileDTO;
 import cn.niter.forum.dto.UserDTO;
 import cn.niter.forum.provider.QCloudProvider;
+import cn.niter.forum.service.FileService;
 import cn.niter.forum.util.CookieUtils;
 import cn.niter.forum.util.TokenUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -39,6 +40,9 @@ public class FileController {
     @Autowired
     private TokenUtils tokenUtils;
 
+    @Autowired
+    private FileService fileService;
+
     @UserLoginToken
     @RequestMapping(value = "/file/upload", method = RequestMethod.POST)
     @ResponseBody
@@ -58,19 +62,20 @@ public class FileController {
             System.out.println("类型："+multipartFile.getContentType()+"名字："+user.getId()+"/"+filename);
             String url = qCloudProvider.upload(inputStream,contentType,user.getId()+"/"+filename,contentLength);
             String[] data ={url};*/
-            InputStream inputStream;
-            String contentType;
-            String filename;
-            Long contentLength;
+//            InputStream inputStream;
+//            String contentType;
+//            String filename;
+//            Long contentLength;
             String[] data = new String[multipartFiles.size()];
             int count = 0;
             for (MultipartFile multipartFile : multipartFiles){
-                inputStream = multipartFile.getInputStream();
-                contentType = multipartFile.getContentType();
-                filename = getFileName(contentType);
-                contentLength = multipartFile.getSize();
+//                inputStream = multipartFile.getInputStream();
+//                contentType = multipartFile.getContentType();
+//                filename = getFileName(contentType);
+//                contentLength = multipartFile.getSize();
                 //System.out.println("原始名字"+multipartFile.getOriginalFilename()+"类型："+multipartFile.getContentType()+"名字："+"upload/user/"+user.getId()+"/"+filename);
-                String url = qCloudProvider.upload(inputStream,contentType,user,filename,contentLength);
+                //String url = qCloudProvider.upload(inputStream,contentType,user,filename,contentLength);
+                String url = fileService.upload(multipartFile, request);
                 data[count] = url;
                 count++;
             }

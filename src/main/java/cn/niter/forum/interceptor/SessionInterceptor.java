@@ -10,6 +10,7 @@ import cn.niter.forum.mapper.UserAccountMapper;
 import cn.niter.forum.mapper.UserMapper;
 import cn.niter.forum.service.AdService;
 import cn.niter.forum.util.TokenUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
@@ -63,6 +64,16 @@ public class SessionInterceptor implements HandlerInterceptor {
            }
            return true;
        }
+//        String origin = request.getHeader("Origin");
+//        //后端响应基本配置项
+//        if (!StringUtils.isEmpty(origin) /* && corsOrigin.contains(origin)*/) {
+//            response.setHeader("Access-Control-Allow-Origin", origin);
+//            response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//            response.setHeader("Access-Control-Allow-Methods", "POST, GET");
+//            response.setHeader("Access-Control-Allow-Credentials", "true");
+//        }
+//        //设备默认值
+//        response.setContentType("application/json;charset=UTF-8");
 
        //拦截非本站post请求，如果你需要改造为前后端分离项目，此处代码可能会有所影响
       /* String origin = request.getHeader("origin");//用来说明请求从哪里发起的，包括，且仅仅包括协议和域名。post请求才有，这个参数一般只存在于CORS跨域请求中，可以看到response有对应的header：Access-Control-Allow-Origin。

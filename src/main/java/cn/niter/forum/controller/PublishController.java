@@ -121,9 +121,11 @@ public class PublishController {
                        Model model,
                        HttpServletRequest request){
         QuestionDTO question = questionService.getById(id,0L);
+        long creatorId = question.getCreator();
         UserDTO user = (UserDTO)request.getAttribute("loginUser");
-        if (question.getCreator().longValue() != user.getId().longValue() ){
+        if (question.getCreator().longValue() != user.getId().longValue()){
             throw new CustomizeException(CustomizeErrorCode.CAN_NOT_EDIT_QUESTION);
+
         }
         model.addAttribute("title", question.getTitle());
         model.addAttribute("description", question.getDescription());
@@ -133,6 +135,21 @@ public class PublishController {
         model.addAttribute("tags", TagCache.get());
         model.addAttribute("navtype", "publishnav");
         return "p/add";
+//        if (question.getCreator().longValue() == user.getId().longValue() || user.getGroupId() == 19 ){
+//            model.addAttribute("title", question.getTitle());
+//            model.addAttribute("description", question.getDescription());
+//            model.addAttribute("column2", question.getColumn2());
+//            model.addAttribute("tag", question.getTag());
+//            model.addAttribute("id", question.getId());
+//            model.addAttribute("tags", TagCache.get());
+//            model.addAttribute("navtype", "publishnav");
+//            return "p/add";
+//        }
+//        else {
+//            throw new CustomizeException(CustomizeErrorCode.CAN_NOT_EDIT_QUESTION);
+//        }
+
+
     }
 
 

@@ -138,7 +138,7 @@
         fly: 'index'
     }).use('fly');
 </script>
-<script src="https://v.vaptcha.com/v3.js"></script>
+<script src="https://v-cn.vaptcha.com/v3.js"></script>
 <script type="text/javascript">
     aqq=null;
     aweibo=null;
@@ -432,7 +432,9 @@
                        // console.log("成功"+token);
                     }
                     else if(data.success==0){
-                        // alert(this.userIp)
+                        //alert(this.userIp)
+                        //alert(data.msg)
+                        //alert(swal)
                         swal({
                             title: ""+data.msg,
                             text: "您未能通过我们的第二次智能检测，请稍后再试或联系管理员",

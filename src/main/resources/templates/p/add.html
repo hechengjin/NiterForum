@@ -110,8 +110,8 @@
                 <div class="layui-input-block" style="width: 190px;">
                   <select lay-verify="required" id="column2" name="column2" lay-filter="column" >
                     <option></option>
-                    <option value="1" th:selected="${column2==1}">提问</option>
-                    <option value="2" th:selected="${column2==2}" >分享</option>
+                    <option value="1" th:selected="${column2==1}">原创</option>
+                    <option value="2" th:selected="${column2==2}" >产品</option>
                     <option value="3" th:selected="${column2==3}">建议</option>
                     <option value="4" th:selected="${column2==4}">讨论</option>
                     <option th:if="${loginUser!=null&&loginUser.groupId==21}" th:selected="${column2==5}" value="5">公告</option>
