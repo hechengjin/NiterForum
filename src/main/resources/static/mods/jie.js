@@ -37,7 +37,7 @@ layui.define('fly', function(exports){
     }else if(value === '4'){
       layer.tips('讨论是一种快速学习，加深印象的方法哦~', obj.othis, tips);
     }else if(value === '3'){
-      layer.tips('有好建议，放肆提，一起完善社区！采纳后会收到站长的么么哒哦(づ￣ 3￣)づ', obj.othis, tips);
+      layer.tips('技术研发交流，一起完善社区！', obj.othis, tips);
     }else if(value === '5'){
       layer.tips('这是站长和管理员专用的哦~', obj.othis, tips);
     }else if(value === '6'){

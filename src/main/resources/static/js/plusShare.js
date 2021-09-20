@@ -137,7 +137,7 @@
 					case 3: //复制链接
 						var clipboard = new ClipboardJS('.copyshare', {
 							text: function() {
-								return '我在尼特社区找到一篇好文章《'+msg.title+'》，快来戳后面的链接来围观吧！---'+msg.href+' ';
+								return '我在成进学堂找到一篇好文章《'+msg.title+'》，快来戳后面的链接来围观吧！---'+msg.href+' ';
 							}
 						});
 						swal("复制成功!", "赶快去粘贴分享文章吧~", "success");

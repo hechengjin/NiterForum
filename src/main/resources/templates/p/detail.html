@@ -26,7 +26,7 @@
           <!-- <span class="layui-badge">审核中</span> -->
           <a class="layui-badge layui-bg-green" th:if="${question.column2==1}">原创</a>
           <a class="layui-badge layui-bg-green" th:if="${question.column2==2}">产品</a>
-          <a class="layui-badge layui-bg-green" th:if="${question.column2==3}">建议</a>
+          <a class="layui-badge layui-bg-green" th:if="${question.column2==3}">研发</a>
           <a class="layui-badge layui-bg-green" th:if="${question.column2==4}">讨论</a>
           <a class="layui-badge layui-bg-green" th:if="${question.column2==5}">公告</a>
           <a class="layui-badge layui-bg-green" th:if="${question.column2==6}">动态</a>
@@ -200,7 +200,7 @@
               <option></option>
               <option value="1" th:selected="${question.column2==1}">原创</option>
               <option value="2" th:selected="${question.column2==2}" >产品</option>
-              <option value="3" th:selected="${question.column2==3}">建议</option>
+              <option value="3" th:selected="${question.column2==3}">研发</option>
               <option value="4" th:selected="${question.column2==4}">讨论</option>
               <option th:if="${question.canSticky}" th:selected="${question.column2==5}" value="5">公告</option>
               <option value="6" th:selected="${question.column2==6}">动态</option>
@@ -438,7 +438,7 @@
 </script>
 <script type="text/javascript">
     //addHtml5Plus();
-    var con = '我在尼特社区找到一篇好文章《'+document.title+'》，快来戳后面的链接来围观吧！---';
+    var con = '我在成进学堂找到一篇好文章《'+document.title+'》，快来戳后面的链接来围观吧！---';
     function myPlusShare() {
         window.plusShare({
             title: document.title,//应用名字或者文章标题
